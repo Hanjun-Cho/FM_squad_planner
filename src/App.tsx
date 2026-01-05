@@ -1,6 +1,6 @@
 import './App.css'
-import PlayerInformationCard from './components/PlayerInformationCard'
 import Pitch from './components/Pitch'
+import PlayerInformation from './components/PlayerInformation';
 import Window from './Window'
 import { useEffect, useState } from 'react'
 
@@ -28,15 +28,7 @@ function App() {
       </div> 
       <div className='player-information-container' style={playerInformationContainerStyle}>
         <div className='player-information-sub-container' style={playerInformationSubContainerStyle}>
-          <div className='player-information-cards'>
-            <PlayerInformationCard/>
-            <PlayerInformationCard/>
-            <PlayerInformationCard/>
-            <PlayerInformationCard/>
-            <PlayerInformationCard/>
-            <PlayerInformationCard/>
-            <PlayerInformationCard/>
-          </div>
+          <PlayerInformation/>
         </div>
       </div>
     </div>
