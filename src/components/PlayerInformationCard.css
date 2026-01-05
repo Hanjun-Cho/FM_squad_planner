@@ -1,0 +1,48 @@
+.player-information-card {
+  width: fit-content;
+  height: fit-content;
+  break-inside: avoid;
+  margin-bottom: 12px;
+}
+
+.player-basic-information-container {
+  background-color: black;
+  width: 400px;
+  border-radius: 12px;
+  padding: 12px;
+
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 6px;
+}
+
+.player-name {
+  font-size: 24px;
+}
+
+.player-basic-information-container span {
+  font-weight: 600;
+}
+
+.player-descriptors-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.player-traits-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.player-descriptor, .player-trait {
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 6px;
+}
+
+.player-trait {
+  background-color: darkorange;
+}
+
