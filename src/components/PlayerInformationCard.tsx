@@ -5,25 +5,10 @@ function PlayerInformationCard() {
   var [playerData, setPlayerData] = useState({
     'playerName' : 'Rio Ngumoha',
     'overallAbility' : 'Rotation',
-    'positions': ['LW', 'RW'],
     'rightFoot': 'Very Strong',
     'leftFoot' : 'Fairly Strong',
-    'strengths' : [
-      {
-        'title': '1v1',
-        'description': 'Ability to take on defenders using their exceptional manipulation of the ball' 
-      },
-    ],
-    'weaknesses' : [
-      {
-        'title': 'Defensive Awareness',
-        'description': 'Being able to read the defensive situation and understand where to be and what to do'
-      },
-      {
-        'title': 'Aerial Duels',
-        'description': 'Being capable of winning aerial duels through jumping and physical capabilities'
-      }
-    ],
+    'strengths' : ['1v1'],
+    'weaknesses' : ['Defensive Awareness','Aerial Duels'],
     'traits' : [
       'Cuts Inside from Both Wings',
       'Runs with Ball Often'
@@ -41,26 +26,21 @@ function PlayerInformationCard() {
   return (
     <div className='player-information-card'>
       <div className='player-basic-information-container'>
-        <span className='player-name'>{playerData['playerName']}</span>
-
-        <div className='player-position-list-container'>
-          {
-            playerData['positions'].map(element => {
-              return element + " ";
-            })
-          }
+        <div className="player-name-ability-container">
+          <span className='player-name'>{playerData['playerName']}</span>
+          <span>({playerData['overallAbility']})</span>
         </div>
 
         <div className='player-descriptors-list-container'>
           {
             playerData['strengths'].map((element,i) => {
-              return <span key={i} className='player-descriptor' style={playerStrengthStyle}>{element['title']}</span>
+              return <span key={i} className='player-descriptor' style={playerStrengthStyle}>{element}</span>
             })
           }
 
           {
             playerData['weaknesses'].map((element,i) => {
-              return <span key={i} className='player-descriptor' style={playerWeaknessStyle}>{element['title']}</span>
+              return <span key={i} className='player-descriptor' style={playerWeaknessStyle}>{element}</span>
             })
           }
 

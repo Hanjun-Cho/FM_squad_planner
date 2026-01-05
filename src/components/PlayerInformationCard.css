@@ -1,17 +1,142 @@
-.add-new-player-card {
+.new-player-card {
   background-color: black;
-  width: 400px;
   height: fit-content;
   border-radius: 12px;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   margin-bottom: 12px;
+
+  .stage-name {
+    display: block;
+    font-size: 21px;
+    font-weight: 600;
+    padding-bottom: 12px;
+    text-align: center;
+  }  
+
+  .input-new-player-card-container {
+    margin-left: 12px;
+    margin-right: 12px;
+
+    .input-new-player-name-ability {
+      width: calc(100% - 9px);
+      display: grid;
+      grid-template-columns: 50% 50%;
+      column-gap: 9px;
+      margin-bottom: 9px;
+
+      input {
+        width: calc(100% - 27px);
+        font-weight: 600;
+        padding: 12px;
+        border-radius: 6px;
+        border-color: transparent;
+      }
+    }
+
+    .input-new-player-footedness {
+      width: calc(100% - 9px);
+      display: grid;
+      grid-template-columns: 60% 40%;
+      column-gap: 9px;
+      margin-bottom: 9px;
+
+      label {
+        position: relative;  
+        padding-left: 51px;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        input {
+          position: absolute;
+          opacity: 0;
+          height: 0;
+          width: 0;
+        }
+        
+        .checkbox {
+          position: absolute;
+          top: 6px;
+          left: 0;
+          height: calc(100% - 12px);
+          aspect-ratio: 1;
+          border-radius: 6px;
+          background-color: gray;
+        }
+
+        .checkbox:hover {
+          background-color: darkgray;
+        }
+
+        .checkbox:after {
+          content: "";
+          position: absolute;
+          display: none;
+
+          border: solid black;
+          border-width: 0 3px 3px 0;
+          width: 5px;
+          height: 10px;
+
+          top: 7px;
+          left: 12px;
+
+          transform: rotate(45deg);
+        }
+
+        input:checked ~ .checkbox {
+          background-color: yellow;
+        }
+
+        input:checked ~ .checkbox:after {
+          display: block;
+        }
+      }
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      border-color: transparent;
+    }
+  }
+
+  .search-container {
+    width: calc(100% - 9px);
+    display: grid;
+    grid-template-columns: 80% 20%;
+    column-gap: 9px;
+    margin-bottom: 9px;
+
+    input {
+      width: calc(100% - 27px);
+      font-weight: 600;
+      padding: 12px;
+      border-radius: 6px;
+      border-color: transparent;
+    }
+  }
+}
+
+.add-new-player-card {
   display: flex;
   justify-content: center;
   font-weight: 600;
   font-size: 18px;
+  cursor: pointer;
+}
+
+
+.next-button {
+  background-color: green;
+  margin-left: 9px;
+}
+
+.add-new-player-card:hover {
+  background-color: green;
 }
 
 .player-information-card {
@@ -28,15 +153,17 @@
 
   display: grid;
   grid-auto-flow: row;
-  row-gap: 6px;
+  row-gap: 15px;
 }
 
 .player-name {
   font-size: 24px;
+  font-weight: 600;
+  margin-right: 6px;
 }
 
-.player-basic-information-container span {
-  font-weight: 600;
+.player-name-ability-container {
+  margin-left: 12px;
 }
 
 .player-descriptors-list-container {
